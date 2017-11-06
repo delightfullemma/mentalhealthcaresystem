@@ -1,0 +1,1162 @@
+#:import Factory kivy.factory.Factory
+
+ScreenManager:
+    id: screen_manager
+    MainAppScreen:
+        id: Disease_system
+        name: 'MainAppScreen'
+        manager: 'screen_manager'
+    Mood:
+        id:Mood 
+        name: 'Mood'
+        manager: 'screen_manager'
+	Depression:
+		id:Depression 
+        name: 'Depression'
+        manager: 'screen_manager'
+	Sleep:
+		id:Sleep 
+        name: 'Sleep'
+        manager: 'screen_manager'
+    one:
+		id:one 
+        name: 'one'
+        manager: 'screen_manager'
+    two:
+		id:two 
+        name: 'two'
+        manager: 'screen_manager'
+    three:
+		id:three 
+        name: 'three'
+        manager: 'screen_manager'
+    four:
+		id:four 
+        name: 'four'
+        manager: 'screen_manager'
+    five:
+		id:five 
+        name: 'five'
+        manager: 'screen_manager'
+    six:
+		id:six 
+        name: 'six'
+        manager: 'screen_manager'
+    seven:
+		id:seven 
+        name: 'seven'
+        manager: 'screen_manager'
+
+    done:
+		id:done 
+        name: 'done'
+        manager: 'screen_manager'
+    dtwo:
+		id:dtwo 
+        name: 'dtwo'
+        manager: 'screen_manager'
+    dthree:
+		id:dthree 
+        name: 'dthree'
+        manager: 'screen_manager'
+    dfour:
+		id:dfour 
+        name: 'dfour'
+        manager: 'screen_manager'
+    dfive:
+		id:dfive 
+        name: 'dfive'
+        manager: 'screen_manager'
+    dsix:
+		id:dsix 
+        name: 'dsix'
+        manager: 'screen_manager'
+    dseven:
+		id:dseven 
+        name: 'dseven'
+        manager: 'screen_manager'
+
+    sone:
+		id:sone 
+        name: 'sone'
+        manager: 'screen_manager'
+    stwo:
+		id:stwo 
+        name: 'stwo'
+        manager: 'screen_manager'
+    sthree:
+		id:sthree 
+        name: 'sthree'
+        manager: 'screen_manager'
+    sfour:
+		id:sfour 
+        name: 'sfour'
+        manager: 'screen_manager'
+    sfive:
+		id:sfive 
+        name: 'sfive'
+        manager: 'screen_manager'
+    ssix:
+		id:ssix 
+        name: 'ssix'
+        manager: 'screen_manager'
+    sseven:
+		id:sseven 
+        name: 'sseven'
+        manager: 'screen_manager'
+	
+	mresult:
+		id:mresult 
+        name: 'mresult'
+        manager: 'screen_manager'
+    dresult:
+		id:dresult 
+        name: 'dresult'
+        manager: 'screen_manager'
+    sresult:
+		id:sresult 
+        name: 'sresult'
+        manager: 'screen_manager'
+<MainAppScreen>:
+	BoxLayout:
+		#orientation : 'vertical'
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/11.jpg'	
+		Label:
+			text: 'Mental Health Care'
+			color: 1,1,0,1
+			size_hint: 0.4,0.15
+			font_size:'80sp'
+			pos_hint: {'center_x':.85, 'center_y': .55}		
+	BoxLayout:
+		Button:
+			size_hint:1,0.2
+			text: 'Mood'
+			font_size:'40sp'
+			background_color: 1,1,0,0.7
+		    on_press: app.root.current = 'Mood'
+		Button:
+			size_hint:1,0.2
+			text: 'Depression'
+			font_size:'40sp'
+			background_color: 1,1,0,0.7
+		    on_press: app.root.current = 'Depression'
+		Button:
+			size_hint:1,0.2
+			text: 'Sleep'
+			font_size:'40sp'
+			background_color: 1,1,0,0.7
+		    on_press: app.root.current = 'Sleep'
+
+<Mood>:
+	
+	BoxLayout:
+
+		height: "80dp"
+		spacing:10
+		padding:10
+	
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/mood.jpg'	
+		Label:
+			text: 'Let us see what is your MOOD!!!'
+			color: 1,0,0,1
+			pos_hint: {'center_x':1, 'center_y': 0.9}		
+			font_size:'50sp'
+			
+	BoxLayout:
+		Button:
+			text: 'START'
+			size_hint:0.9,0.2
+			font_size:'34sp'
+			color:0,0,1,1
+			background_color: 0,1,1,0.5
+            on_press: app.root.current = 'one'
+		Button:
+			text: '<---BACK'
+			background_color: 1,1,1,1
+			size_hint:0.1,0.2	
+            on_press: app.root.current = 'MainAppScreen'
+
+            
+            
+     
+<one>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lb.jpeg'
+		
+		
+		Label:
+			text:'I could not seem to have \nany positive experience\n at all'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state1()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'two'
+
+<two>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/lb.jpeg'	
+		
+		Label:
+			text:'I found it difficult to work \nwith the initiative to do things'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state2()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'three'
+<three>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/lb.jpeg'	
+		
+		Label:
+			text:'I felt that i had nothing \nto look forward to'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state3()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'four'
+		
+<four>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lb.jpeg'
+		
+		Label:
+			text:'I feel downhearted'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state4()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'five'
+
+<five>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lb.jpeg'
+		
+		Label:
+			text:'I was unable to become \nenthusiastic about anything '
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state5()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'six'
+
+<six>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lb.jpeg'
+		
+		Label:
+			text:'I was not worth much as a person'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state6()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'seven'
+
+
+
+<seven>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lb.jpeg'
+		
+		Label:
+			text:'I felt that life was meaningless'
+			color: 0,0,1,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			on_press:root.onn_state7()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'SEE THE RESULT'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'mresult'
+
+<mresult>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+		Button:
+			text: 'CLICK HERE TO SEE THE RESULT'
+			size_hint:0.2,0.4
+			background_color: 1,0,0,0.8	
+	        on_press: root.resultt()
+	        pos_hint: {'center_x':0.5, 'center_y': 0.7}
+	        font_size:'30sp'	
+	BoxLayout:	
+		Button:
+			text: 'GO BACK TO THE MAIN SCREEN'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'MainAppScreen'
+
+<Depression>:
+	BoxLayout:
+
+		height: "80dp"
+		spacing:10
+		padding:10
+	
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/depression.jpg'
+		Label:
+			text: 'ARE YOU DEPRESSED'
+			color: 1,0,0,1
+			pos_hint: {'center_x':1, 'center_y': 0.9}		
+			font_size:'50sp'
+		
+	BoxLayout:
+		Button:
+			text: 'START'
+			size_hint:0.9,0.2
+			color:0,0,1,1
+			font_size:'34sp'
+			background_color: 0,1,1,0.5
+            on_press: app.root.current = 'done'
+		Button:
+			text: '<---BACK'
+			background_color: 1,1,1,1
+			size_hint:0.1,0.2	
+            on_press: app.root.current = 'MainAppScreen'
+        		
+<done>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color:  1,0,0.25,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		Label:
+			text:'My sleep has been disturbed '
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state8()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dtwo'
+
+<dtwo>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		
+		Label:
+			text:'I find it difficult to focus on \n my decisions '
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state9()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dthree'
+
+
+<dthree>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/lp.jpeg'
+					
+		
+		Label:
+			text:'I keep thing about death \n or suicide '
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state10()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dfour'
+
+		
+<dfour>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		
+		Label:
+			text:'Negativity encircles my mind \n when I am alone '
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state11()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dfive'
+
+
+<dfive>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		
+		Label:
+			text:'I have I am a guilty person who \n deserves to be punished'
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state12()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dsix'
+
+<dsix>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		
+		Label:
+			text:'I feel like working alone\n with no crowd and\n noise around me'
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}
+			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state13()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dseven'
+
+
+
+<dseven>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lp.jpeg'
+				
+		
+		Label:
+			text:'I have past incidences that keep \n horifing me '
+			color: 0.8,0,0.25,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state14()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'SEE YOUR RESULT'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'dresult'
+<dresult>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+		Button:
+			text: 'CLICK HERE TO SEE THE RESULT'
+			size_hint:0.2,0.4
+			background_color: 1,0,0,1	
+	        on_press: root.resultt()
+	        font_size:'30sp'
+	        pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'GO BACK TO MAIN SCREEN'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'MainAppScreen'
+
+
+<Sleep>:
+	BoxLayout:
+
+		height: "80dp"
+		spacing:20
+		padding:15
+	
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size
+				source:'/home/anuja/Desktop/sleep.jpg'	
+		Label:
+			text: 'LET US SEE HOW MUCH YOU SLEEP'
+			color: 1,0,0,1
+			pos_hint: {'center_x':1, 'center_y': 0.9}		
+			font_size:'45sp'
+		
+	BoxLayout:
+		Button:
+			text: 'START'
+			size_hint:0.9,0.2
+			font_size:'34sp'
+			color:0,0,1,1
+			background_color: 0,1,1,0.5
+            on_press: app.root.current = 'sone'
+		Button:
+			text: '<---BACK'
+			background_color: 1,1,1,1
+			size_hint:0.1,0.2	
+            on_press: app.root.current = 'MainAppScreen'
+
+<sone>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		Label:
+			text:'I have difficulty falling asleep!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state15()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'stwo'
+
+<stwo>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		Label:
+			text:'Thoughts race through my mind \n this prevents me from sleeping!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state16()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'sthree'
+
+
+<sthree>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		
+		Label:
+			text:'I feel afraid to sleep!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state17()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'sfour'
+
+		
+<sfour>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		
+		Label:
+			text:'I wake up during the night and \ncant go back to sleep!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state18()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'sfive'
+
+
+<sfive>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		
+		Label:
+			text:'I worry about things and have \n trouble relaxing!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state19()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'ssix'
+
+<ssix>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		
+		Label:
+			text:'Despite sleeping all night..\nI do not feel refreshed when \nI wake up!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+            group: 'g1'
+			 
+			on_press:root.onn_state20()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'NEXT-->'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'sseven'
+
+
+
+<sseven>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+				source:'/home/anuja/Desktop/lg.jpeg'
+		
+		Label:
+			text:'I wake up in the morning with muscle \nor joint stiffness and aches!'
+			color:0,133,0,1
+			size_hint:0.8,1
+			font_size:'40sp'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}			
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'YES'
+			group: 'g1'
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+		ToggleButton:
+            size_hint:0.1,0.1
+            height: '10dp'
+            text: 'NO'
+			group: 'g1'
+			 
+			on_press:root.onn_state21()
+			pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'See the result'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'sresult'
+
+<sresult>:
+	BoxLayout:
+		height: "80dp"
+		spacing:10
+		padding:10
+		background_color: 0,1,1,1
+		canvas:
+			Rectangle:	
+				pos:self.pos
+				size:self.size	
+		Button:
+			text: 'CLICK HERE TO SEE THE RESULT'
+			size_hint:0.1,0.4
+			background_color: 1,0,0,0.8
+			font_size:'30sp'	
+	        on_press: root.resultt()
+	        pos_hint: {'center_x':0.5, 'center_y': 0.7}	
+	BoxLayout:	
+		Button:
+			text: 'GO BACK TO THE MAIN SCREEN'
+			size_hint:0.2,None
+			background_color: 1,1,1,1	
+	        on_press: app.root.current = 'MainAppScreen'
+
